@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Flask with D3.js </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+   <div class="container">
+      <div id="scatterplot"></div>
+         <div id="right">
+            <div id="top-right"><button id="update">Update Data</button></div>
+            <div id="bottom-right" id="info"></div>
+      </div>
+   </div>
+</body>
+ <script type="text/javascript">
+    // One way to get data from server
+    const points = {{points|tojson}};
+</script>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</html>
